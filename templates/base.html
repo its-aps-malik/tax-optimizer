@@ -1,14 +1,27 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        {% block title_block %}{% endblock title_block %}
-    </title>
+    <title>{% block title_block %}{% endblock title_block %}</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
   </head>
   <body>
-	{% block body_block %}{% endblock body_block %}
+    <div class="banner">
+      <div class="navbar">
+        <img src="{% static 'rupee_logo.png'%}" class="logo">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Tax calculator</a></li>
+          <li><a href="#">Old tax regime</a></li>
+          <li><a href="#">New tax regime</a></li>
+          <li><a href="#">About me</a></li>
+        </ul>
+      </div>
+      {% block body_block %}{% endblock body_block %}
+    </div>
   </body>
 </html>
